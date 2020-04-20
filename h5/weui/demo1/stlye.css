@@ -1,0 +1,21 @@
+.container, .page{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.page__bd{
+    height: 100%;
+    background:#f7f7f7;
+    flex: 1;
+}
+.fruit-items{
+    font-size: 0;
+}
+.fruit-item{
+    background-color: #fff;
+    display: inline-block;
+    width: 48%;
+    font-size: 14px;
+}

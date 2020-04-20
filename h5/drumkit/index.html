@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drumkit</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <!-- .keys>.key>(div+.span.sound)*9 -->
+    <div class="keys">
+        <div class="key">  
+            <div>A</div>
+            <div class="span sound">CLAP</div>
+        </div>
+        <div class="key">  
+            <div>S</div>
+            <div class="span sound">HIHAI</div>
+        </div>
+        <div class="key">      
+            <div>D</div>
+            <div class="span sound">KICK</div>
+        </div>
+        <div class="key">  
+            <div>F</div>
+            <div class="span sound">OPENHAT</div>
+        </div>
+        <div class="key">  
+            <div>G</div>
+            <div class="span sound">BOOM</div>
+        </div>
+        <div class="key">  
+            <div>H</div>
+            <div class="span sound">RIDE</div>
+        </div>
+        <div class="key">  
+            <div>J</div>
+            <div class="span sound">SNARE</div>
+        </div>
+        <div class="key">  
+            <div>K</div>
+            <div class="span sound">TOM</div>
+        </div>
+        <div class="key">  
+            <div>L</div>
+            <div class="span sound">TINK</div>
+        </div>
+        </div>
+    </div>
+    <audio src="sounds/clap.wav" data-key="65"></audio>
+    <audio src="sounds/boom.wav"data-key="83"></audio>
+    <audio src="sounds/hihat.wav"data-key="68"></audio>
+    <audio src="sounds/kick.wav"data-key="70"></audio>
+    <audio src="sounds/openhat.wav"data-key="71"></audio>
+    <audio src="sounds/ride.wav"data-key="72"></audio>
+    <audio src="sounds/snare.wav"data-key="74"></audio>
+    <audio src="sounds/tink.wav"data-key="75"></audio>
+    <audio src="sounds/tom.wav"data-key="76"></audio>
+    <script>
+        const palySound = function(event){
+            // console.log(event.keyCode);
+            let keyCode = event.keyCode;
+            const ele = document.querySelector(`audio[data-key="${keyCode}"]`)
+            // console.log(ele);
+            if(ele){
+                ele.play();
+            }
+
+        }
+        window.addEventListener('keydown',palySound)
+    </script>
+</body>
+</html>
