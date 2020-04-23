@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // obectj 对象字面量
+        let obj = {
+            name: 'lc',
+            age: 18
+        }
+        delete obj.name;
+        obj.school = 'ECUT'
+        console.log(obj);
+        // 赋值  操作：指向同一块内存地址
+        let obj1 = obj;
+        obj1.homeTown = 'jx';
+        console.log(obj1);
+        // 数组
+        let arr1 = [0,1,2];
+        let arr2 = arr1;
+        arr2.push(3);
+        console.log(arr1,arr2);
+
+        // 基本数据类型
+        let str1 = 'ecut';
+        // 赋值互不相关
+        let str2 = str1;
+        str2 = 'ecit';
+        console.log(str1,str2);
+    </script>
+</body>
+</html>
