@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>append chilid DOM API</title>
+</head>
+<body>
+    <ul id="students"></ul>
+
+    <script>
+        const students = [{
+            id: 1,
+            name: '小红',
+            github: 'https://github.com/StevenYoung21'
+        },{
+            id: 2,  
+            name: '小黄',
+            github: 'https://github.com/StevenYoung21'
+        },{
+            id: 3,
+            name: '小绿',
+            github: 'https://github.com/StevenYoung21'
+        }]
+
+        // arr -> map -> html ar -> join  -> url
+        const oUL = document.getElementById('students');
+        oUL.style.fontSize = '40px';
+        // console.log( oLi.nodeType); 
+        // console.log( oText.nodeType);
+        // 结点树
+        // console.log(students,student);
+        const fragment = document.createDocumentFragment(); // 垫片 
+        for(let student of students){
+            const oLi = document.createElement('li');
+            oLi.className = 'item';
+            const oA = document.createElement('a');
+            oA.setAttribute('href', student.github);
+            const oText = document.createTextNode(student.name);
+
+            oA.appendChild(oText);
+            oLi.appendChild(oA); 
+            fragment.appendChild(oLi);
+            // oUL.appendChild(oLi);  // 性能问题   页面会重新绘制和刷新， JS DOM 性能消耗大
+        }
+        oUL.appendChild(fragment);
+
+        const studentLis = document.querySelectorAll('.item');
+        // console.log(studentLis);
+        studentLis.forEach((li, index)=>{
+            // console.log(li);
+            let oA = li.querySelector('a');
+            // console.log(oA);
+            const oSpan = document.createElement('span');
+            oSpan.appendChild(document.createTextNode(students[index].id));
+            li.insertBefore(oSpan, oA);
+        })
+
+        // studentLis  伪数组，支持 for ， forEach, length , 下标访问，仅此而已
+
+        
+
+    //     console.log(
+    //         [...studentLis].filter((li)=>{
+    //         return li.childNodes[0].innerText == '小红';
+    //     })
+    // )
+
+    </script>
+</body>
+</html>
