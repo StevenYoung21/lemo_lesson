@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+/* css4 引入了variable */
+
+:root{  /* 根上 */
+    --bgcolor: green;  /*  值可以复用*/
+    --color: red;
+}
+p{
+    color:var(--color)  /* var 使用变量 */
+}
+div{
+    background-color: var(--bgcolor);
+}
+
+</style>
+
+<body>
+    <p>莫失心所念，万物尽所期</p>
+    <div> 长路慢走，深话浅说 </div>
+</body>
+</html>
